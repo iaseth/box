@@ -6,9 +6,6 @@
 #include "box_types.h"
 
 
-BoxOwner box_new_owner (char *name);
-BoxOwner box_delete_owner (BoxOwner owner);
-
 Box box_new (BoxOwner owner, size_t size);
 Box box_delete (BoxOwner owner, Box box);
 

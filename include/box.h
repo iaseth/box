@@ -3,6 +3,7 @@
 
 #include "box_types.h"
 #include "box_base.h"
+#include "box_owner.h"
 #include "box_macros.h"
 
 
