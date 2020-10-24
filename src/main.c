@@ -5,5 +5,6 @@
 int
 main (int argc, char const *argv[])
 {
-	printf("Hello, Box!\n");
+	BoxOwner owner = box_new_owner("Hector");
+	owner = box_delete_owner(owner);
 }

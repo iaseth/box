@@ -1,6 +1,8 @@
 #ifndef BOX_TYPES_H_IS_INCLUDED
 #define BOX_TYPES_H_IS_INCLUDED
 
+#define MAX_NAME_LENGTH 100
+
 
 struct BoxOwnerStruct;
 struct BoxStruct;
@@ -13,6 +15,8 @@ typedef struct BoxStruct *Box;
 
 
 struct BoxOwnerStruct {
+	char name[MAX_NAME_LENGTH];
+
 	BoxOwner parent;
 	BoxOwner first_child;
 	BoxOwner last_child;
