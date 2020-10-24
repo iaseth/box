@@ -12,8 +12,8 @@ RM = ${AMP}rm -f
 BOX_NAMES = 
 BOX_NAMES += box
 BOX_NAMES += box_types
-BOX_NAMES += box_base
 BOX_NAMES += box_owner
+BOX_NAMES += box_box
 BOX_NAMES += box_macros
 
 BOX_OBJ_NAMES = ${addsuffix .o, ${BOX_NAMES}}

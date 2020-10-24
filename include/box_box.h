@@ -1,5 +1,5 @@
-#ifndef BOX_BASE_H_IS_INCLUDED
-#define BOX_BASE_H_IS_INCLUDED
+#ifndef BOX_BOX_H_IS_INCLUDED
+#define BOX_BOX_H_IS_INCLUDED
 
 #include <stdlib.h>
 
