@@ -13,6 +13,7 @@ BOX_NAMES =
 BOX_NAMES += box
 BOX_NAMES += box_types
 BOX_NAMES += box_base
+BOX_NAMES += box_macros
 
 BOX_OBJ_NAMES = ${addsuffix .o, ${BOX_NAMES}}
 BOX_OBJS = ${addprefix build/, ${BOX_OBJ_NAMES}}
