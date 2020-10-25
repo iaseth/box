@@ -25,7 +25,7 @@ struct BoxOwnerStruct {
 	BoxOwner last_child;
 
 	Box *slots;
-	unsigned int slots_length;
+	unsigned int number_of_slots;
 
 	unsigned int boxes_currently_allocated;
 	unsigned int boxes_currently_in_use;

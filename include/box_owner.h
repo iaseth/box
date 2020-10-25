@@ -7,6 +7,8 @@
 BoxOwner box_new_owner (char *name);
 BoxOwner box_delete_owner (BoxOwner owner);
 
+void box_print_slots (BoxOwner owner);
+
 
 
 #endif
