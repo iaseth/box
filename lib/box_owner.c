@@ -56,7 +56,7 @@ box_print_slots (BoxOwner owner)
 	);
 	for (int i = 0; i < owner->boxes_slots; ++i) {
 		Box box = owner->boxes[i];
-		printf("\t#%-3d ", i+1);
+		printf("    #%4d => ", i+1);
 		if (box == NULL) {
 			printf("....");
 		} else {
