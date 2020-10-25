@@ -4,7 +4,7 @@
 
 
 
-Box
+void *
 box_new (BoxOwner owner, size_t size)
 {
 	if (owner == NULL) return NULL;
@@ -16,21 +16,19 @@ box_new (BoxOwner owner, size_t size)
 		owner->boxes[index] = box;
 		owner->boxes_count++;
 	}
-	return box;
+	return box->memory;
 }
 
-Box
-box_delete (BoxOwner owner, Box box)
+void *
+box_delete (BoxOwner owner, void *memory)
 {
 	if (owner == NULL) return NULL;
-	if (box == NULL) return NULL;
+	if (memory == NULL) return NULL;
 	unsigned int last_index = owner->boxes_count - 1;
 	for (int i = 0; i < owner->boxes_count; ++i) {
-		Box current_box = owner->boxes[i];
-		if (current_box == box) {
-			if (box->memory != NULL) {
-				free(box->memory);
-			}
+		Box box = owner->boxes[i];
+		if (box->memory == memory) {
+			free(box->memory);
 			free(box);
 			owner->boxes[i] = NULL;
 			owner->boxes_count--;

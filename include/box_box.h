@@ -4,8 +4,8 @@
 #include "box_types.h"
 
 
-Box box_new (BoxOwner owner, size_t size);
-Box box_delete (BoxOwner owner, Box box);
+void* box_new (BoxOwner owner, size_t size);
+void* box_delete (BoxOwner owner, void *memory);
 
 
 
