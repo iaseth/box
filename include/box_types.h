@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #define BOX_MAX_NAME_LENGTH 100
+#define BOX_MIN_NUMBER_OF_CHILDREN 8
 #define BOX_MIN_NUMBER_OF_SLOTS 32
 
 
