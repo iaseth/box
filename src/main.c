@@ -2,10 +2,10 @@
 
 #include "box.h"
 
-int
-main (int argc, char const *argv[])
+void
+array_stuff ()
 {
-	BoxOwner owner = bx->new_owner("Hector");
+	BoxOwner owner = bx->new_owner("array_stuff");
 	int *arr = box_new_int_array(owner, 20);
 	for (int i = 0; i < 20; ++i) {
 		arr[i] = (i+1) * (i+1);
@@ -16,4 +16,10 @@ main (int argc, char const *argv[])
 	}
 	bx->print_slots(owner);
 	owner = bx->delete_owner(owner);
+}
+
+int
+main (int argc, char const *argv[])
+{
+	array_stuff();
 }
