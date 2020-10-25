@@ -11,11 +11,21 @@ box_new (BoxOwner owner, size_t size)
 	Box box = malloc(sizeof(BoxStruct));
 	box->memory = malloc(size);
 	box->size = size;
-	if (owner->boxes_slots > owner->boxes_count) {
-		int index = owner->boxes_count;
+
+	int index = owner->boxes_count;
+	if (index < owner->boxes_slots) {
 		owner->boxes[index] = box;
-		owner->boxes_count++;
+	} else {
+		size_t size = sizeof(Box) * owner->boxes_slots * 2;
+		owner->boxes = realloc(owner->boxes, size);
+		owner->boxes_slots = owner->boxes_slots * 2;
+		owner->boxes[index] = box;
+		for (int i = index+1; i < owner->boxes_slots; ++i) {
+			owner->boxes[i] = NULL;
+		}
 	}
+	owner->boxes_count++;
+
 	return box->memory;
 }
 

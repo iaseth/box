@@ -21,5 +21,12 @@ array_stuff ()
 int
 main (int argc, char const *argv[])
 {
-	array_stuff();
+	//array_stuff();
+	BoxOwner owner = bx->new_owner("Hector");
+	int *arr = NULL;
+	for (int i = 0; i < 35; ++i) {
+		arr = box_new(owner, 20);
+	}
+	bx->print_slots(owner);
+	owner = bx->delete_owner(owner);
 }
