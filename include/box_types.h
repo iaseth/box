@@ -23,11 +23,11 @@ struct BoxOwnerStruct {
 
 	BoxOwner parent;
 	BoxOwner *children;
-	unsigned int number_of_children;
+	unsigned int children_slots;
+	unsigned int children_count;
 
-	Box *slots;
-	unsigned int number_of_slots;
-
+	Box *boxes;
+	unsigned int boxes_slots;
 	unsigned int boxes_currently_allocated;
 	unsigned int boxes_currently_in_use;
 

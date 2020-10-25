@@ -9,9 +9,9 @@ box_new (BoxOwner owner, size_t size)
 	Box box = malloc(sizeof(BoxStruct));
 	box->memory = malloc(size);
 	box->size = size;
-	if (owner->number_of_slots > owner->boxes_currently_allocated) {
+	if (owner->boxes_slots > owner->boxes_currently_allocated) {
 		int index = owner->boxes_currently_allocated;
-		owner->slots[index] = box;
+		owner->boxes[index] = box;
 	}
 	return box;
 }
