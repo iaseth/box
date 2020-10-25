@@ -36,7 +36,8 @@ box_delete_owner (BoxOwner owner)
 	for (int i = 0; i < owner->boxes_count; ++i) {
 		Box box = owner->boxes[i];
 		if (box != NULL) {
-			box_delete(owner, box);
+			free(box->memory);
+			free(box);
 		}
 	}
 	free(owner->boxes);

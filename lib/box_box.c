@@ -38,6 +38,7 @@ box_delete (BoxOwner owner, Box box)
 				owner->boxes[i] = owner->boxes[last_index];
 				owner->boxes[last_index] = NULL;
 			}
+			break;
 		}
 	}
 	return NULL;
