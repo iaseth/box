@@ -1,7 +1,10 @@
 #ifndef BOX_TYPES_H_IS_INCLUDED
 #define BOX_TYPES_H_IS_INCLUDED
 
-#define MAX_NAME_LENGTH 100
+#include <stdlib.h>
+
+#define BOX_MAX_NAME_LENGTH 100
+#define BOX_MIN_NUMBER_OF_SLOTS 32
 
 
 struct BoxOwnerStruct;
@@ -15,20 +18,20 @@ typedef struct BoxStruct *Box;
 
 
 struct BoxOwnerStruct {
-	char name[MAX_NAME_LENGTH];
+	char name[BOX_MAX_NAME_LENGTH];
 
 	BoxOwner parent;
 	BoxOwner first_child;
 	BoxOwner last_child;
 
-	Box *boxes;
-	int boxes_length;
+	Box *slots;
+	unsigned int slots_length;
 
-	int boxes_currently_allocated;
-	int boxes_currently_in_use;
+	unsigned int boxes_currently_allocated;
+	unsigned int boxes_currently_in_use;
 
-	int bytes_currently_allocated;
-	int bytes_currently_in_use;
+	size_t bytes_currently_allocated;
+	size_t bytes_currently_in_use;
 };
 
 struct BoxStruct {

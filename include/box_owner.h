@@ -1,8 +1,6 @@
 #ifndef BOX_OWNER_H_IS_INCLUDED
 #define BOX_OWNER_H_IS_INCLUDED
 
-#include <stdlib.h>
-
 #include "box_types.h"
 
 

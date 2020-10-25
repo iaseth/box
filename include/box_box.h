@@ -1,8 +1,6 @@
 #ifndef BOX_BOX_H_IS_INCLUDED
 #define BOX_BOX_H_IS_INCLUDED
 
-#include <stdlib.h>
-
 #include "box_types.h"
 
 
