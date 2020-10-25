@@ -5,13 +5,20 @@
 
 struct BoxBxStruct;
 
-typedef const struct BoxBxStruct* (*BoxAllocatorFunction) (BoxOwner owner, unsigned int length);
-
 struct BoxBxStruct {
 	int status_code;
 
 	BoxOwner (*new_owner) (char *title);
 	BoxOwner (*delete_owner) (BoxOwner owner);
+
+	Box (*new_box) (BoxOwner owner, size_t size);
+	Box (*delete_box) (BoxOwner owner, Box box);
+
+	void* (*new) (BoxOwner owner, size_t size);
+	void* (*delete) (BoxOwner owner, void *memory);
+
+	struct BoxBxStruct* (*print_status) (BoxOwner owner);
+	struct BoxBxStruct* (*print_slots) (BoxOwner owner);
 };
 
 extern const struct BoxBxStruct *const bx;
