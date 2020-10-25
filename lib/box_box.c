@@ -15,6 +15,12 @@ box_new (BoxOwner owner, size_t size)
 Box
 box_delete (BoxOwner owner, Box box)
 {
+	if (owner == NULL) return NULL;
+	if (box == NULL) return NULL;
+	if (box->memory != NULL) {
+		free(box->memory);
+	}
+	free(box);
 	return NULL;
 }
 
