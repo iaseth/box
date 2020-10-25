@@ -36,7 +36,7 @@ struct BoxOwnerStruct {
 
 struct BoxStruct {
 	void *memory;
-	int size;
+	unsigned int size;
 };
 
 
