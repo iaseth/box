@@ -46,7 +46,7 @@ box_print_slots (BoxOwner owner)
 		if (box == NULL) {
 			printf("\tSlot #%-3d is NULL.\n", i);
 		} else {
-			printf("\tSlot #-%3d is not NULL.\n", i);
+			printf("\tSlot #%-3d is of %d bytes.\n", i, box->size);
 		}
 	}
 	printf("\tTotal slots: %d\n", owner->number_of_slots);
