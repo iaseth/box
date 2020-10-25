@@ -5,7 +5,7 @@
 int
 main (int argc, char const *argv[])
 {
-	BoxOwner owner = box_new_owner("Hector");
+	BoxOwner owner = bx->new_owner("Hector");
 	int *arr = box_new_int_array(owner, 20);
 	for (int i = 0; i < 20; ++i) {
 		arr[i] = (i+1) * (i+1);
@@ -14,6 +14,6 @@ main (int argc, char const *argv[])
 			printf("\n");
 		}
 	}
-	box_print_slots(owner);
-	owner = box_delete_owner(owner);
+	bx->print_slots(owner);
+	owner = bx->delete_owner(owner);
 }

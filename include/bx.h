@@ -17,8 +17,8 @@ struct BoxBxStruct {
 	void* (*new) (BoxOwner owner, size_t size);
 	void* (*delete) (BoxOwner owner, void *memory);
 
-	struct BoxBxStruct* (*print_status) (BoxOwner owner);
-	struct BoxBxStruct* (*print_slots) (BoxOwner owner);
+	const struct BoxBxStruct* (*print_status) (BoxOwner owner);
+	const struct BoxBxStruct* (*print_slots) (BoxOwner owner);
 };
 
 extern const struct BoxBxStruct *const bx;

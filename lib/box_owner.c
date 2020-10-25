@@ -47,7 +47,7 @@ box_delete_owner (BoxOwner owner)
 
 
 
-void
+const struct BoxBxStruct *
 box_print_slots (BoxOwner owner)
 {
 	printf("\tName: %s (%d slots, %d allocated)\n",
@@ -67,6 +67,7 @@ box_print_slots (BoxOwner owner)
 		}
 	}
 	printf("\tTotal slots: %d\n", owner->boxes_slots);
+	return bx;
 }
 
 
