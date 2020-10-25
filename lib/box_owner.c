@@ -40,7 +40,10 @@ box_delete_owner (BoxOwner owner)
 void
 box_print_slots (BoxOwner owner)
 {
-	printf("\tName: %s\n", owner->name);
+	printf("\tName: %s (%d slots, %d allocated, %d in use)\n",
+		owner->name, owner->number_of_slots,
+		owner->boxes_currently_allocated, owner->boxes_currently_in_use
+	);
 	for (int i = 0; i < owner->number_of_slots; ++i) {
 		Box box = owner->slots[i];
 		printf("\t#%-3d ", i+1);
