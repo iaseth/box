@@ -1,4 +1,5 @@
 #include "box_owner.h"
+#include "box_box.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -32,6 +33,12 @@ BoxOwner
 box_delete_owner (BoxOwner owner)
 {
 	free(owner->children);
+	for (int i = 0; i < owner->boxes_count; ++i) {
+		Box box = owner->boxes[i];
+		if (box != NULL) {
+			box_delete(owner, box);
+		}
+	}
 	free(owner->boxes);
 	free(owner);
 	return NULL;
