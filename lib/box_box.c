@@ -5,7 +5,11 @@
 Box
 box_new (BoxOwner owner, size_t size)
 {
-	return NULL;
+	if (owner == NULL) return NULL;
+	Box box = malloc(sizeof(BoxStruct));
+	box->memory = malloc(size);
+	box->size = size;
+	return box;
 }
 
 Box
