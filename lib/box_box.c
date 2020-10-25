@@ -1,5 +1,7 @@
 #include "box_box.h"
 
+#include <stdio.h>
+
 
 
 Box
@@ -22,10 +24,22 @@ box_delete (BoxOwner owner, Box box)
 {
 	if (owner == NULL) return NULL;
 	if (box == NULL) return NULL;
-	if (box->memory != NULL) {
-		free(box->memory);
+	unsigned int last_index = owner->boxes_count - 1;
+	for (int i = 0; i < owner->boxes_count; ++i) {
+		Box current_box = owner->boxes[i];
+		if (current_box == box) {
+			if (box->memory != NULL) {
+				free(box->memory);
+			}
+			free(box);
+			owner->boxes[i] = NULL;
+			owner->boxes_count--;
+			if (i != last_index) {
+				owner->boxes[i] = owner->boxes[last_index];
+				owner->boxes[last_index] = NULL;
+			}
+		}
 	}
-	free(box);
 	return NULL;
 }
 
