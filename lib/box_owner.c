@@ -23,10 +23,8 @@ box_new_owner (char *name)
 		owner->boxes[i] = NULL;
 	}
 	owner->boxes_slots = BOX_MIN_NUMBER_OF_SLOTS;
-	owner->boxes_currently_allocated = 0;
-	owner->boxes_currently_in_use = 0;
-	owner->bytes_currently_allocated = 0;
-	owner->bytes_currently_in_use = 0;
+	owner->boxes_count = 0;
+	owner->bytes_allocated = 0;
 	return owner;
 }
 
@@ -44,9 +42,9 @@ box_delete_owner (BoxOwner owner)
 void
 box_print_slots (BoxOwner owner)
 {
-	printf("\tName: %s (%d slots, %d allocated, %d in use)\n",
-		owner->name, owner->boxes_slots,
-		owner->boxes_currently_allocated, owner->boxes_currently_in_use
+	printf("\tName: %s (%d slots, %d allocated)\n",
+		owner->name,
+		owner->boxes_slots, owner->boxes_count
 	);
 	for (int i = 0; i < owner->boxes_slots; ++i) {
 		Box box = owner->boxes[i];

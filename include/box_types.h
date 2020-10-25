@@ -28,11 +28,8 @@ struct BoxOwnerStruct {
 
 	Box *boxes;
 	unsigned int boxes_slots;
-	unsigned int boxes_currently_allocated;
-	unsigned int boxes_currently_in_use;
-
-	size_t bytes_currently_allocated;
-	size_t bytes_currently_in_use;
+	unsigned int boxes_count;
+	size_t bytes_allocated;
 };
 
 struct BoxStruct {
