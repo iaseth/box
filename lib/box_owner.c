@@ -40,13 +40,17 @@ box_delete_owner (BoxOwner owner)
 void
 box_print_slots (BoxOwner owner)
 {
-	printf("Called %s on %s:\n", __func__, owner->name);
+	printf("\tName: %s\n", owner->name);
 	for (int i = 0; i < owner->number_of_slots; ++i) {
 		Box box = owner->slots[i];
+		printf("\t#%-3d ", i+1);
 		if (box == NULL) {
-			printf("\tSlot #%-3d is NULL.\n", i);
+			printf("....");
 		} else {
-			printf("\tSlot #%-3d is of %d bytes.\n", i, box->size);
+			printf("%-4d", box->size);
+		}
+		if (i % 8 == 7) {
+			printf("\n");
 		}
 	}
 	printf("\tTotal slots: %d\n", owner->number_of_slots);
