@@ -7,6 +7,8 @@
 void* box_new (BoxOwner owner, size_t size);
 void* box_delete (BoxOwner owner, void *memory);
 
+void* box_new_int_array (BoxOwner owner, int length);
+
 
 
 #endif

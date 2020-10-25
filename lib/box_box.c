@@ -42,4 +42,11 @@ box_delete (BoxOwner owner, void *memory)
 	return NULL;
 }
 
+void *
+box_new_int_array (BoxOwner owner, int length)
+{
+	size_t size = sizeof(int) * length;
+	return box_new(owner, size);
+}
+
 
