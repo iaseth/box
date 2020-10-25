@@ -11,7 +11,6 @@ box_new (BoxOwner owner, size_t size)
 	box->size = size;
 	if (owner->number_of_slots > owner->boxes_currently_allocated) {
 		int index = owner->boxes_currently_allocated;
-		owner->last_child = box;
 		owner->slots[index] = box;
 	}
 	return box;

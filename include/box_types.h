@@ -21,8 +21,8 @@ struct BoxOwnerStruct {
 	char name[BOX_MAX_NAME_LENGTH];
 
 	BoxOwner parent;
-	BoxOwner first_child;
-	BoxOwner last_child;
+	BoxOwner *children;
+	unsigned int number_of_children;
 
 	Box *slots;
 	unsigned int number_of_slots;

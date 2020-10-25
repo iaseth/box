@@ -11,8 +11,8 @@ box_new_owner (char *name)
 	BoxOwner owner = malloc(sizeof(BoxOwnerStruct));
 	strcpy(owner->name, name);
 	owner->parent = NULL;
-	owner->first_child = NULL;
-	owner->last_child = NULL;
+	owner->children = NULL;
+	owner->number_of_children = 0;
 
 	owner->slots = malloc(sizeof(Box) * BOX_MIN_NUMBER_OF_SLOTS);
 	for (int i = 0; i < BOX_MIN_NUMBER_OF_SLOTS; ++i) {
